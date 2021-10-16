@@ -26,17 +26,23 @@ public class Blog {
     @Column(columnDefinition = "TEXT")
     private String body;
 
+    private Integer likes;
+
+    private Integer dislikes;
+
     @ManyToOne
     private User user;
 
     public Blog() {
     }
 
-    public Blog(String title, String publisher, Date publishedDate, String body, User user) {
+    public Blog(String title, String publisher, Date publishedDate, String body, Integer likes, Integer dislikes, User user) {
         this.title = title;
         this.publisher = publisher;
         this.publishedDate = publishedDate;
         this.body = body;
+        this.likes = likes;
+        this.dislikes = dislikes;
         this.user = user;
     }
 }

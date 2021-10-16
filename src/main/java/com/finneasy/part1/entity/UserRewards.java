@@ -6,26 +6,24 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.util.Date;
 
+
 @Entity
 @Getter
 @Setter
-public class Rewards {
-
+public class UserRewards {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private String title;
-
-    private String description;
-
-    private String image_url;
-
-    private Date timestamp;
-
-    private Double price;
-
+    
     @ManyToOne
     private User user;
+    
+    @ManyToOne
+    private Reward reward;
+    
+    private Date expiryTime;
 
+    private Boolean isEncashed;
+    
 }

@@ -13,4 +13,10 @@ public interface BlogService {
 
     List<BlogModel> getAllBlogsOfUser(Long userId);
 
+    List<BlogModel> getAllBlogs();
+
+    BlogModel likeBlog(Long id);
+
+    BlogModel dislikeBlog(Long id);
+
 }

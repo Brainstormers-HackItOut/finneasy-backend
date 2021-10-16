@@ -31,4 +31,19 @@ public class BlogController {
     public ResponseEntity<List<BlogModel>> getAllBlogsOfUser(@PathVariable Long userId){
         return ResponseEntity.ok(blogService.getAllBlogsOfUser(userId));
     }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<BlogModel>> getAllBlogs(@PathVariable Long userId){
+        return ResponseEntity.ok(blogService.getAllBlogs());
+    }
+
+    @GetMapping("/like/{id}")
+    public ResponseEntity<BlogModel> likeBlog(@PathVariable Long id){
+        return ResponseEntity.ok(blogService.likeBlog(id));
+    }
+
+    @GetMapping("/dislike/{id}")
+    public ResponseEntity<BlogModel> dislikeBlog(@PathVariable Long id){
+        return ResponseEntity.ok(blogService.dislikeBlog(id));
+    }
 }

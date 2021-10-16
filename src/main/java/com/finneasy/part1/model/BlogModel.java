@@ -22,4 +22,8 @@ public class BlogModel {
 
     private Long userId;
 
+    private Integer likes;
+
+    private Integer dislikes;
+
 }

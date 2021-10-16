@@ -29,6 +29,8 @@ public class BlogServiceImpl implements BlogService{
                 user.getFirstName() + " " + user.getLastName(),
                 blogModel.getPublishedDate(),
                 blogModel.getBody(),
+                0,
+                0,
                 user
         );
 
@@ -47,6 +49,25 @@ public class BlogServiceImpl implements BlogService{
     public List<BlogModel> getAllBlogsOfUser(Long userId) {
         User user = userService.getUser(userId);
         return blogRepository.findAllByUser(user).stream().map(blog -> blogToBlogModel(blog)).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<BlogModel> getAllBlogs() {
+        return ((List<Blog>)blogRepository.findAll()).stream().map(blog -> blogToBlogModel(blog)).collect(Collectors.toList());
+    }
+
+    @Override
+    public BlogModel likeBlog(Long id) {
+        Blog blog = blogRepository.findById(id).get();
+        blog.setLikes(blog.getLikes()+1);
+        return blogToBlogModel(blog);
+    }
+
+    @Override
+    public BlogModel dislikeBlog(Long id) {
+        Blog blog = blogRepository.findById(id).get();
+        blog.setDislikes(blog.getDislikes()+1);
+        return blogToBlogModel(blog);
     }
 
     private BlogModel blogToBlogModel(Blog blog){
