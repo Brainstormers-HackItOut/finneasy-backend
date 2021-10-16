@@ -24,4 +24,9 @@ public class UserController {
     public ResponseEntity<?> getUser(@PathVariable String phoneNumber){
         return ResponseEntity.ok(userService.getUserByPhoneNumber(phoneNumber));
     }
+
+    @GetMapping("/referral/{referralCode}")
+    public ResponseEntity<Void> referralUsed(@PathVariable String referralCode){
+        return ResponseEntity.ok().build();
+    }
 }
