@@ -43,7 +43,19 @@ public class RewardServiceImpl implements RewardService{
 
     @Override
     public List<Reward> getAllRewards() {
-        return (List<Reward>) rewardRepository.findAll();
+
+        List<Reward> rewardList = (List<Reward>) rewardRepository.findAll();
+
+        Collections.sort(rewardList, new Comparator<Reward>() {
+            @Override
+            public int compare(Reward o1, Reward o2) {
+                if(o1.getMilestoneNumber()<o2.getMilestoneNumber())
+                    return -1;
+                return 1;
+            }
+        });
+
+        return rewardList;
     }
 
     @Override
