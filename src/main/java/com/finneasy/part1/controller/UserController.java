@@ -1,6 +1,6 @@
 package com.finneasy.part1.controller;
 
-import com.finneasy.part1.dto.UserDto;
+import com.finneasy.part1.model.UserModel;
 import com.finneasy.part1.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,8 +16,8 @@ public class UserController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<?> addUser(@RequestBody UserDto userDto){
-        return ResponseEntity.ok(userService.registerUser(userDto));
+    public ResponseEntity<?> addUser(@RequestBody UserModel userModel){
+        return ResponseEntity.ok(userService.registerUser(userModel));
     }
 
     @GetMapping("/{phoneNumber}")

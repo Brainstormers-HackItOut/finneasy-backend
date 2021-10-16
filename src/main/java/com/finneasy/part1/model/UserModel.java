@@ -1,11 +1,11 @@
-package com.finneasy.part1.dto;
+package com.finneasy.part1.model;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Setter
 @Getter
-public class UserDto {
+public class UserModel {
 
     private String firstName;
 

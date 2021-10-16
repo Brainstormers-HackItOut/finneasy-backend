@@ -1,6 +1,6 @@
 package com.finneasy.part1.service;
 
-import com.finneasy.part1.dto.UserDto;
+import com.finneasy.part1.model.UserModel;
 import com.finneasy.part1.entity.User;
 import com.finneasy.part1.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -10,7 +10,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
-import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService, UserDetailsService {
@@ -24,12 +23,12 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     @Override
-    public User registerUser(UserDto userDto) {
-            User user = new User(userDto.getFirstName(),
-                    userDto.getLastName(),
-                    userDto.getPhoneNumber(),
-                    userDto.getEmailId(),
-                    bCryptPasswordEncoder.encode(userDto.getPassword()));
+    public User registerUser(UserModel userModel) {
+            User user = new User(userModel.getFirstName(),
+                    userModel.getLastName(),
+                    userModel.getPhoneNumber(),
+                    userModel.getEmailId(),
+                    bCryptPasswordEncoder.encode(userModel.getPassword()));
         return userRepository.save(user);
     }
 
