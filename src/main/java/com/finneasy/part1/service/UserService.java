@@ -11,5 +11,5 @@ public interface UserService {
 
     User getUser(Long id);
 
-    Void userReferral(String referralCode);
+    User findByReferral(String referralCode);
 }

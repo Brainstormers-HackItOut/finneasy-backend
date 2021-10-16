@@ -18,12 +18,10 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     private UserRepository userRepository;
     private BCryptPasswordEncoder bCryptPasswordEncoder;
-    private RewardService rewardService;
 
-    public UserServiceImpl(UserRepository userRepository, BCryptPasswordEncoder bCryptPasswordEncoder,RewardService rewardService) {
+    public UserServiceImpl(UserRepository userRepository, BCryptPasswordEncoder bCryptPasswordEncoder) {
         this.userRepository = userRepository;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
-        this.rewardService  = rewardService;
     }
 
     @Override
@@ -48,10 +46,8 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     @Override
-    public Void userReferral(String referralCode) {
-        User user = userRepository.findByReferralCode(referralCode);
-        rewardService.incrementMilestone(user.getId());
-        return null;
+    public User findByReferral(String referralCode) {
+        return userRepository.findByReferralCode(referralCode);
     }
 
     @Override

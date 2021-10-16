@@ -11,4 +11,6 @@ public interface RewardService {
     List<Reward> getAllRewards();
 
     Reward findRewardByMilestone(Integer milestoneNumber);
+
+    void userReferral(String referralCode);
 }

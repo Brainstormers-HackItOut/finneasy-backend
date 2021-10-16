@@ -62,4 +62,10 @@ public class RewardServiceImpl implements RewardService{
     public Reward findRewardByMilestone(Integer milestoneNumber) {
         return rewardRepository.findByMilestoneNumber(milestoneNumber);
     }
+
+    @Override
+    public void userReferral(String referralCode) {
+        User user = userService.findByReferral(referralCode);
+        incrementMilestone(user.getId());
+    }
 }
