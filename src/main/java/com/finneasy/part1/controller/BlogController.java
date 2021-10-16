@@ -33,7 +33,7 @@ public class BlogController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<BlogModel>> getAllBlogs(@PathVariable Long userId){
+    public ResponseEntity<List<BlogModel>> getAllBlogs(){
         return ResponseEntity.ok(blogService.getAllBlogs());
     }
 

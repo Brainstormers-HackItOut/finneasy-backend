@@ -3,15 +3,12 @@ package com.finneasy.part1.entity;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Getter
 @Setter
-public class Stocks {
+public class Stock {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,5 +23,8 @@ public class Stocks {
     private Integer quantity;
 
     private TransactionType type;
+
+    @ManyToOne
+    private User user;
 
 }
