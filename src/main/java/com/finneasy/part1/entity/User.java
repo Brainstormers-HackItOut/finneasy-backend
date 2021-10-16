@@ -24,6 +24,8 @@ public class User {
 
     private String emailId;
 
+    private String referralCode;
+
     @JsonIgnore
     private String password;
 
@@ -36,11 +38,12 @@ public class User {
     public User() {
     }
 
-    public User(String firstName, String lastName, String phoneNumber, String emailId, String password) {
+    public User(String firstName, String lastName, String phoneNumber, String emailId,String referralCode, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.emailId = emailId;
+        this.referralCode = referralCode;
         this.password = password;
         this.totalRewards = 10;
         this.milestoneCounter = 1;
