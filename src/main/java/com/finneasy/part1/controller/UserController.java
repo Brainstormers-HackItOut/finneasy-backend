@@ -19,4 +19,9 @@ public class UserController {
     public ResponseEntity<?> addUser(@RequestBody UserDto userDto){
         return ResponseEntity.ok(userService.registerUser(userDto));
     }
+
+    @GetMapping("/{phoneNumber}")
+    public ResponseEntity<?> getUser(@PathVariable String phoneNumber){
+        return ResponseEntity.ok(userService.getUserByPhoneNumber(phoneNumber));
+    }
 }

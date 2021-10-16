@@ -10,6 +10,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService, UserDetailsService {
@@ -35,6 +36,11 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     @Override
     public User getUserByPhoneNumber(String phoneNumber) {
         return userRepository.findByPhoneNumber(phoneNumber);
+    }
+
+    @Override
+    public User getUser(Long id) {
+        return userRepository.findById(id).get();
     }
 
     @Override
