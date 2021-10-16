@@ -8,5 +8,5 @@ import java.util.List;
 public interface StockService {
     StockModel createStock(StockModel stockModel);
 
-    List<Stock> getAllStocksOfUser(Long userId);
+    List<StockModel> getAllStocksOfUser(Long userId);
 }

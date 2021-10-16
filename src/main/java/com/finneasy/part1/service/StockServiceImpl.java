@@ -4,9 +4,11 @@ import com.finneasy.part1.entity.Stock;
 import com.finneasy.part1.entity.User;
 import com.finneasy.part1.model.StockModel;
 import com.finneasy.part1.repository.StockRepository;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class StockServiceImpl implements StockService{
@@ -35,8 +37,15 @@ public class StockServiceImpl implements StockService{
     }
 
     @Override
-    public List<Stock> getAllStocksOfUser(Long userId) {
+    public List<StockModel> getAllStocksOfUser(Long userId) {
         User user = userService.getUser(userId);
-        return stockRepository.findAllByUser(user);
+        return stockRepository.findAllByUser(user).stream().map(stock -> stockToStockModel(stock)).collect(Collectors.toList());
+    }
+
+    private StockModel stockToStockModel(Stock stock){
+        StockModel stockModel = new StockModel();
+        BeanUtils.copyProperties(stock, stockModel);
+        stockModel.setUserId(stock.getUser().getId());
+        return stockModel;
     }
 }
