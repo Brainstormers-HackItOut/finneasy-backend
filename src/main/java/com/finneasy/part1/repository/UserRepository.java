@@ -1,6 +1,6 @@
-package com.feasy.part1.repository;
+package com.finneasy.part1.repository;
 
-import com.feasy.part1.entity.User;
+import com.finneasy.part1.entity.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

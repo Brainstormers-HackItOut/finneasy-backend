@@ -1,4 +1,4 @@
-package com.feasy.part1.jwtutil;
+package com.finneasy.part1.jwtutil;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

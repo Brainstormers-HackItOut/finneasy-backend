@@ -1,8 +1,8 @@
-package com.feasy.part1.service;
+package com.finneasy.part1.service;
 
-import com.feasy.part1.dto.UserDto;
-import com.feasy.part1.entity.User;
-import com.feasy.part1.repository.UserRepository;
+import com.finneasy.part1.dto.UserDto;
+import com.finneasy.part1.entity.User;
+import com.finneasy.part1.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

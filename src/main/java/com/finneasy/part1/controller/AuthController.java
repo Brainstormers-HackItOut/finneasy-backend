@@ -1,9 +1,9 @@
-package com.feasy.part1.controller;
+package com.finneasy.part1.controller;
 
-import com.feasy.part1.jwtutil.JWTUtil;
-import com.feasy.part1.model.LoginForm;
-import com.feasy.part1.model.LoginResponse;
-import com.feasy.part1.service.UserService;
+import com.finneasy.part1.jwtutil.JWTUtil;
+import com.finneasy.part1.model.LoginForm;
+import com.finneasy.part1.model.LoginResponse;
+import com.finneasy.part1.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

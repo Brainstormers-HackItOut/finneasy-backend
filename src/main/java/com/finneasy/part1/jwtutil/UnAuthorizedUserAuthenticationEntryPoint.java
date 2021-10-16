@@ -1,4 +1,4 @@
-package com.feasy.part1.jwtutil;
+package com.finneasy.part1.jwtutil;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;

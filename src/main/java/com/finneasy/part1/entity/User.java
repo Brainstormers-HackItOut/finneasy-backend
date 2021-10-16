@@ -1,4 +1,4 @@
-package com.feasy.part1.entity;
+package com.finneasy.part1.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;

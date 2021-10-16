@@ -1,7 +1,7 @@
-package com.feasy.part1.controller;
+package com.finneasy.part1.controller;
 
-import com.feasy.part1.dto.UserDto;
-import com.feasy.part1.service.UserService;
+import com.finneasy.part1.dto.UserDto;
+import com.finneasy.part1.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

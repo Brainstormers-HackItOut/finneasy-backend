@@ -1,4 +1,4 @@
-package com.feasy.part1.model;
+package com.finneasy.part1.model;
 
 import lombok.Getter;
 import lombok.Setter;

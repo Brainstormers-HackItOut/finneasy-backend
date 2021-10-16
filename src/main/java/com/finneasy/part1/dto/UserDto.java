@@ -1,4 +1,4 @@
-package com.feasy.part1.dto;
+package com.finneasy.part1.dto;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,7 +1,7 @@
-package com.feasy.part1.service;
+package com.finneasy.part1.service;
 
-import com.feasy.part1.dto.UserDto;
-import com.feasy.part1.entity.User;
+import com.finneasy.part1.dto.UserDto;
+import com.finneasy.part1.entity.User;
 
 public interface UserService {
 
