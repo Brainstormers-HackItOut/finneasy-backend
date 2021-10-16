@@ -19,4 +19,8 @@ public class UserModel {
 
     private Integer totalRewards;
 
+    private Integer milestoneCounter;
+
+    private Integer milestoneNumber;
+
 }
