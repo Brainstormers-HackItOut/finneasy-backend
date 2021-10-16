@@ -27,6 +27,8 @@ public class User {
     @JsonIgnore
     private String password;
 
+    private Integer totalRewards;
+
     public User() {
     }
 
@@ -36,5 +38,6 @@ public class User {
         this.phoneNumber = phoneNumber;
         this.emailId = emailId;
         this.password = password;
+        this.totalRewards = 10;
     }
 }

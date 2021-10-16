@@ -26,4 +26,6 @@ public class BlogModel {
 
     private Integer dislikes;
 
+    private String publisher;
+
 }
