@@ -60,6 +60,7 @@ public class BlogServiceImpl implements BlogService{
     public BlogModel likeBlog(Long id) {
         Blog blog = blogRepository.findById(id).get();
         blog.setLikes(blog.getLikes()+1);
+        blogRepository.save(blog);
         return blogToBlogModel(blog);
     }
 
@@ -67,6 +68,7 @@ public class BlogServiceImpl implements BlogService{
     public BlogModel dislikeBlog(Long id) {
         Blog blog = blogRepository.findById(id).get();
         blog.setDislikes(blog.getDislikes()+1);
+        blogRepository.save(blog);
         return blogToBlogModel(blog);
     }
 
