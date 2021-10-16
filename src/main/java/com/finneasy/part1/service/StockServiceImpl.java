@@ -15,10 +15,12 @@ public class StockServiceImpl implements StockService{
 
     private UserService userService;
     private StockRepository stockRepository;
+    private RewardService rewardService;
 
-    public StockServiceImpl(UserService userService, StockRepository stockRepository) {
+    public StockServiceImpl(UserService userService, StockRepository stockRepository, RewardService rewardService) {
         this.userService = userService;
         this.stockRepository = stockRepository;
+        this.rewardService = rewardService;
     }
 
     @Override
@@ -33,6 +35,13 @@ public class StockServiceImpl implements StockService{
         stock.setType(stockModel.getType());
         stockRepository.save(stock);
         stockModel.setId(stock.getId());
+
+        Boolean check = rewardService.incrementMilestone(user.getId());
+
+        if(check == Boolean.TRUE){
+            stockModel.setReward(rewardService.findRewardByMilestone(user.getMilestoneNumber()));
+        }
+
         return stockModel;
     }
 

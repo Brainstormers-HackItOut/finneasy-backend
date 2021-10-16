@@ -1,6 +1,7 @@
 package com.finneasy.part1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.finneasy.part1.entity.Reward;
 import com.finneasy.part1.entity.TransactionType;
 import lombok.Getter;
 import lombok.Setter;
@@ -23,5 +24,7 @@ public class StockModel {
     private TransactionType type;
 
     private Long userId;
+
+    private Reward reward;
 
 }

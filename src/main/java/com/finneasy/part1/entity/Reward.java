@@ -23,8 +23,6 @@ public class Reward {
 
     private String image_url;
 
-    private Date timestamp;
-
-    private Double price;
+    private Integer coins;
 
 }

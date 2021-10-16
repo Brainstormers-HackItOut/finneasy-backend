@@ -29,6 +29,10 @@ public class User {
 
     private Integer totalRewards;
 
+    private Integer milestoneCounter;
+
+    private Integer milestoneNumber;
+
     public User() {
     }
 
@@ -39,5 +43,15 @@ public class User {
         this.emailId = emailId;
         this.password = password;
         this.totalRewards = 10;
+        this.milestoneCounter = 1;
+        this.milestoneNumber = 1;
+    }
+
+    public void incrementCounter(){
+        milestoneCounter = milestoneNumber + 1;
+    }
+
+    public void addCoins(Integer coins){
+        totalRewards += coins;
     }
 }
