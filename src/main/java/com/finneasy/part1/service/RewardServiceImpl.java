@@ -36,8 +36,11 @@ public class RewardServiceImpl implements RewardService{
         if(index>=0){
             user.setMilestoneNumber(user.getMilestoneCounter());
             user.addCoins(findRewardByMilestone(milestones.get(index)).getCoins());
+            userService.saveUser(user);
             return Boolean.TRUE;
         }
+
+        userService.saveUser(user);
         return Boolean.FALSE;
     }
 

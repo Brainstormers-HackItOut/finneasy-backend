@@ -12,4 +12,6 @@ public interface UserService {
     User getUser(Long id);
 
     User findByReferral(String referralCode);
+
+    User saveUser(User user);
 }
