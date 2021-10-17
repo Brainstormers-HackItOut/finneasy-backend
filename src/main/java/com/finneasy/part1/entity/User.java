@@ -51,7 +51,7 @@ public class User {
     }
 
     public void incrementCounter(){
-        milestoneCounter = milestoneNumber + 1;
+        milestoneCounter = milestoneCounter + 1;
     }
 
     public void addCoins(Integer coins){
