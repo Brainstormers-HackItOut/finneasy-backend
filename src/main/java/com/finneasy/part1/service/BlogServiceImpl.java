@@ -7,6 +7,8 @@ import com.finneasy.part1.repository.BlogRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -53,7 +55,17 @@ public class BlogServiceImpl implements BlogService{
 
     @Override
     public List<BlogModel> getAllBlogs() {
-        return ((List<Blog>)blogRepository.findAll()).stream().map(blog -> blogToBlogModel(blog)).collect(Collectors.toList());
+
+        List<Blog> blogList = (List<Blog>)blogRepository.findAll();
+        Collections.sort(blogList, new Comparator<Blog>() {
+            @Override
+            public int compare(Blog o1, Blog o2) {
+                if(o1.getId()>o2.getId())
+                    return -1;
+                return 1;
+            }
+        });
+        return (blogList).stream().map(blog -> blogToBlogModel(blog)).collect(Collectors.toList());
     }
 
     @Override
