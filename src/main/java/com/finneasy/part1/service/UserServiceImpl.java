@@ -72,6 +72,6 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     private String getReferralCode(String firstName , String phoneNumber){
-        return firstName.toLowerCase().substring(0,3).concat(phoneNumber.substring(phoneNumber.length()-4,phoneNumber.length()-1));
+        return firstName.toLowerCase().substring(0,4).concat(phoneNumber.substring(phoneNumber.length()-4,phoneNumber.length()-1));
     }
 }
